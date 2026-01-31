@@ -11,12 +11,111 @@
 </head>
 <body>
     <main class="landing">
-        <h1 class="tagline">here is everything i think feel see hear and love</h1>
+        <p class="greeting" id="greeting"></p>
+        <h1 class="tagline" id="tagline">here is everything i think feel observe and will stand by for the next 3 months</h1>
         <nav class="nav-links">
             <a href="writings/">writings</a>
             <a href="thoughts/">thoughts</a>
-            <a href="about.html">about</a>
+            <a href="me.html">me</a>
         </nav>
+        <p class="signature">— anamika</p>
     </main>
+
+    <script>
+        // Time-based greeting
+        function setGreeting() {
+            const hour = new Date().getHours();
+            const greetingEl = document.getElementById('greeting');
+
+            if (hour >= 5 && hour < 12) {
+                greetingEl.textContent = 'good morning';
+            } else if (hour >= 12 && hour < 17) {
+                greetingEl.textContent = 'good afternoon';
+            } else if (hour >= 17 && hour < 21) {
+                greetingEl.textContent = 'good evening';
+            } else {
+                greetingEl.textContent = 'late night?';
+            }
+        }
+
+        // Text scramble effect
+        class TextScramble {
+            constructor(el) {
+                this.el = el;
+                this.chars = 'abcdefghijklmnopqrstuvwxyz';
+                this.update = this.update.bind(this);
+            }
+
+            setText(newText) {
+                const oldText = this.el.innerText;
+                const length = Math.max(oldText.length, newText.length);
+                const promise = new Promise((resolve) => this.resolve = resolve);
+                this.queue = [];
+
+                for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || '';
+                    const to = newText[i] || '';
+                    const start = Math.floor(Math.random() * 40);
+                    const end = start + Math.floor(Math.random() * 40);
+                    this.queue.push({ from, to, start, end });
+                }
+
+                cancelAnimationFrame(this.frameRequest);
+                this.frame = 0;
+                this.update();
+                return promise;
+            }
+
+            update() {
+                let output = '';
+                let complete = 0;
+
+                for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i];
+
+                    if (this.frame >= end) {
+                        complete++;
+                        output += to;
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                            char = this.randomChar();
+                            this.queue[i].char = char;
+                        }
+                        output += char;
+                    } else {
+                        output += from;
+                    }
+                }
+
+                this.el.innerText = output;
+
+                if (complete === this.queue.length) {
+                    this.resolve();
+                } else {
+                    this.frameRequest = requestAnimationFrame(this.update);
+                    this.frame++;
+                }
+            }
+
+            randomChar() {
+                return this.chars[Math.floor(Math.random() * this.chars.length)];
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setGreeting();
+
+            const taglineEl = document.getElementById('tagline');
+            const finalText = taglineEl.innerText;
+            const fx = new TextScramble(taglineEl);
+
+            // Start with empty and scramble in
+            taglineEl.innerText = '';
+            setTimeout(() => {
+                fx.setText(finalText);
+            }, 300);
+        });
+    </script>
 </body>
 </html>

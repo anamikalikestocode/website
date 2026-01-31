@@ -16,17 +16,82 @@
             <h1 class="page-title">writings</h1>
         </header>
 
-        <ul class="content-list">
-            <!-- Add your writings here like this: -->
-            <!--
-            <li>
-                <a href="my-first-piece.html">the title of something i wrote</a>
-                <span class="content-date">january 2025</span>
-            </li>
-            -->
-        </ul>
+        <div class="writings-grid" id="writingsGrid">
+            <!-- Example boxes - replace with your actual writings -->
+            <!-- Each box tries to escape when you hover! -->
 
-        <p class="empty-state">nothing here yet... but soon.</p>
+            <a href="#" class="writing-box" data-escapable>
+                <h3>on trying too hard</h3>
+                <span>january 2025</span>
+            </a>
+
+            <a href="#" class="writing-box" data-escapable>
+                <h3>why i stopped using social media</h3>
+                <span>december 2024</span>
+            </a>
+
+            <a href="#" class="writing-box" data-escapable>
+                <h3>the myth of productivity</h3>
+                <span>november 2024</span>
+            </a>
+
+            <a href="#" class="writing-box" data-escapable>
+                <h3>letters to no one</h3>
+                <span>october 2024</span>
+            </a>
+
+            <a href="#" class="writing-box" data-escapable>
+                <h3>what i learned from failing</h3>
+                <span>september 2024</span>
+            </a>
+
+            <a href="#" class="writing-box" data-escapable>
+                <h3>midnight thoughts on meaning</h3>
+                <span>august 2024</span>
+            </a>
+        </div>
     </main>
+
+    <script>
+        // Chaos escape effect - boxes try to run away from cursor
+        const boxes = document.querySelectorAll('[data-escapable]');
+
+        boxes.forEach(box => {
+            let isEscaping = false;
+            let escapeTimeout;
+
+            box.addEventListener('mouseenter', (e) => {
+                if (isEscaping) return;
+
+                // Random chance to escape (70% chance)
+                if (Math.random() < 0.7) {
+                    isEscaping = true;
+
+                    // Random escape direction and distance
+                    const escapeX = (Math.random() - 0.5) * 120;
+                    const escapeY = (Math.random() - 0.5) * 80;
+                    const rotation = (Math.random() - 0.5) * 15;
+
+                    box.style.transform = `translate(${escapeX}px, ${escapeY}px) rotate(${rotation}deg)`;
+                    box.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+                    // Return to original position after a moment
+                    escapeTimeout = setTimeout(() => {
+                        box.style.transform = 'translate(0, 0) rotate(0deg)';
+                        setTimeout(() => {
+                            isEscaping = false;
+                        }, 300);
+                    }, 500);
+                }
+            });
+
+            // Allow click after settling
+            box.addEventListener('click', (e) => {
+                if (isEscaping) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
