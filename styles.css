@@ -70,7 +70,7 @@ body {
 }
 
 .tagline:hover {
-    transform: scale(3);
+    transform: scale(1.5);
 }
 
 .nav-links {
@@ -94,7 +94,7 @@ body {
 
 .nav-links a:hover {
     color: var(--text-dark);
-    transform: scale(3);
+    transform: scale(1.5);
 }
 
 .signature {
@@ -110,7 +110,7 @@ body {
 }
 
 .signature:hover {
-    transform: scale(3);
+    transform: scale(1.5);
 }
 
 /* === Page Layout === */

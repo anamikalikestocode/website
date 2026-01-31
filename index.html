@@ -11,7 +11,6 @@
 </head>
 <body>
     <main class="landing">
-        <p class="greeting" id="greeting"></p>
         <h1 class="tagline" id="tagline">here is everything i think feel observe and will stand by for the next 3 months</h1>
         <nav class="nav-links">
             <a href="writings/">writings</a>
@@ -22,22 +21,6 @@
     </main>
 
     <script>
-        // Time-based greeting
-        function setGreeting() {
-            const hour = new Date().getHours();
-            const greetingEl = document.getElementById('greeting');
-
-            if (hour >= 5 && hour < 12) {
-                greetingEl.textContent = 'good morning';
-            } else if (hour >= 12 && hour < 17) {
-                greetingEl.textContent = 'good afternoon';
-            } else if (hour >= 17 && hour < 21) {
-                greetingEl.textContent = 'good evening';
-            } else {
-                greetingEl.textContent = 'late night?';
-            }
-        }
-
         // Text scramble effect
         class TextScramble {
             constructor(el) {
@@ -104,8 +87,6 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            setGreeting();
-
             const taglineEl = document.getElementById('tagline');
             const finalText = taglineEl.innerText;
             const fx = new TextScramble(taglineEl);
