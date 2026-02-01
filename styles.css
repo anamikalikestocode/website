@@ -96,18 +96,29 @@ body {
     animation: none;
 }
 
+.me-page .page-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
 .me-page .page-title {
-    color: #2D2D2D;
+    color: #4A6B5D;
     font-weight: 400;
+    font-style: italic;
 }
 
 .me-page .back-link {
-    color: #5A5A5A;
+    color: #7A9B8D;
     font-weight: 400;
 }
 
 .me-page .back-link:hover {
-    color: #2D2D2D;
+    color: #4A6B5D;
 }
 
 .me-card {
