@@ -44,6 +44,12 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* === Landing Page Background === */
+.landing-page {
+    background: url('yellow-house.jpg') center center / cover no-repeat fixed;
+    animation: none;
+}
+
 /* === Landing Page === */
 .landing {
     min-height: 100vh;
@@ -61,12 +67,18 @@ body {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     text-align: center;
     max-width: 600px;
-    color: var(--text-dark);
+    color: #1a1a1a;
     margin-bottom: 3rem;
     letter-spacing: 0.02em;
     min-height: 4em;
     transition: transform 0.2s ease;
     cursor: default;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.landing-page .tagline {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .tagline:hover {
@@ -92,9 +104,18 @@ body {
     display: inline-block;
 }
 
+.landing-page .nav-links a {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
 .nav-links a:hover {
     color: var(--text-dark);
     transform: scale(1.3);
+}
+
+.landing-page .nav-links a:hover {
+    color: #fff9e6;
 }
 
 .signature {
@@ -107,6 +128,11 @@ body {
     letter-spacing: 0.05em;
     transition: transform 0.2s ease;
     cursor: default;
+}
+
+.landing-page .signature {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .signature:hover {
