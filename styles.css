@@ -50,6 +50,37 @@ body {
     animation: none;
 }
 
+/* === Writings Page Background === */
+.writings-page {
+    background: url('writings-bg.jpg') center center / cover no-repeat fixed;
+    animation: none;
+}
+
+.writings-page .page-title,
+.writings-page .back-link {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.writings-page .back-link:hover {
+    color: #fff9e6;
+}
+
+.writings-page .writing-box {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.writings-page .writing-box h3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.writings-page .writing-box:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* === Landing Page === */
 .landing {
     min-height: 100vh;
