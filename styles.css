@@ -71,7 +71,6 @@ body {
     margin-bottom: 3rem;
     letter-spacing: 0.02em;
     min-height: 4em;
-    transition: transform 0.2s ease;
     cursor: default;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
@@ -81,8 +80,13 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.tagline:hover {
-    transform: scale(1.15);
+.tagline-word {
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+.tagline-word:hover {
+    transform: scale(1.08);
 }
 
 .nav-links {

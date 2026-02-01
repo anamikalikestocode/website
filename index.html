@@ -94,7 +94,13 @@
             // Start with empty and scramble in
             taglineEl.innerText = '';
             setTimeout(() => {
-                fx.setText(finalText);
+                fx.setText(finalText).then(() => {
+                    // After scramble completes, wrap each word in a span for individual hover
+                    const words = finalText.split(' ');
+                    taglineEl.innerHTML = words.map(word =>
+                        `<span class="tagline-word">${word}</span>`
+                    ).join(' ');
+                });
             }, 300);
         });
     </script>
