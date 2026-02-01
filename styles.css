@@ -90,6 +90,31 @@ body {
     background: rgba(0, 0, 0, 0.4);
 }
 
+/* === Article Page (Individual Writing) === */
+.article-page {
+    background: #000000;
+    animation: none;
+}
+
+.article-page .page-title {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.article-page .back-link {
+    color: #888888;
+}
+
+.article-page .back-link:hover {
+    color: #ffffff;
+}
+
+.article-page .me-content,
+.article-page .me-value,
+.article-page p {
+    color: #ffffff;
+}
+
 /* === Me Page Background === */
 .me-page {
     background: url('me-bg.jpg') center center / cover no-repeat fixed;
