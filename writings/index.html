@@ -17,75 +17,30 @@
         </header>
 
         <div class="writings-grid" id="writingsGrid">
-            <!-- Example boxes - replace with your actual writings -->
-            <!-- Each box tries to escape when you hover! -->
-
-            <a href="#" class="writing-box" data-escapable>
+            <a href="#" class="writing-box">
                 <h3>what to do when you turn 23</h3>
             </a>
 
-            <a href="#" class="writing-box" data-escapable>
+            <a href="#" class="writing-box">
                 <h3>what your olive oil says about your politics</h3>
             </a>
 
-            <a href="poker.html" class="writing-box" data-escapable>
+            <a href="poker.html" class="writing-box">
                 <h3>how to be good at poker</h3>
             </a>
 
-            <a href="#" class="writing-box" data-escapable>
+            <a href="#" class="writing-box">
                 <h3>a whitepaper on friendship</h3>
             </a>
 
-            <a href="startups.html" class="writing-box" data-escapable>
+            <a href="startups.html" class="writing-box">
                 <h3>startups to stay away from 101</h3>
             </a>
 
-            <a href="#" class="writing-box" data-escapable>
+            <a href="#" class="writing-box">
                 <h3>you and the atomic bomb 2.0</h3>
             </a>
         </div>
     </main>
-
-    <script>
-        // Chaos escape effect - boxes try to run away from cursor
-        const boxes = document.querySelectorAll('[data-escapable]');
-
-        boxes.forEach(box => {
-            let isEscaping = false;
-            let escapeTimeout;
-
-            box.addEventListener('mouseenter', (e) => {
-                if (isEscaping) return;
-
-                // Random chance to escape (70% chance)
-                if (Math.random() < 0.7) {
-                    isEscaping = true;
-
-                    // Random escape direction and distance
-                    const escapeX = (Math.random() - 0.5) * 120;
-                    const escapeY = (Math.random() - 0.5) * 80;
-                    const rotation = (Math.random() - 0.5) * 15;
-
-                    box.style.transform = `translate(${escapeX}px, ${escapeY}px) rotate(${rotation}deg)`;
-                    box.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
-
-                    // Return to original position after a moment
-                    escapeTimeout = setTimeout(() => {
-                        box.style.transform = 'translate(0, 0) rotate(0deg)';
-                        setTimeout(() => {
-                            isEscaping = false;
-                        }, 300);
-                    }, 500);
-                }
-            });
-
-            // Allow click after settling
-            box.addEventListener('click', (e) => {
-                if (isEscaping) {
-                    e.preventDefault();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
