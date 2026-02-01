@@ -90,6 +90,32 @@ body {
     background: rgba(0, 0, 0, 0.4);
 }
 
+/* === Me Page Background === */
+.me-page {
+    background: url('me-bg.jpg') center center / cover no-repeat fixed;
+    animation: none;
+}
+
+.me-page .page-title,
+.me-page .back-link {
+    color: #2D2D2D;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.me-page .back-link:hover {
+    color: #5A5A5A;
+}
+
+.me-page .me-label {
+    color: #5A5A5A;
+    font-weight: 500;
+}
+
+.me-page .me-value {
+    color: #2D2D2D;
+    font-weight: 400;
+}
+
 /* === Landing Page === */
 .landing {
     min-height: 100vh;
