@@ -117,7 +117,7 @@ body {
 
 /* === Me Page Background === */
 .me-page {
-    background: url('me-bg.jpg') center center / cover no-repeat fixed;
+    background: url('me-bg.png') center center / cover no-repeat fixed;
     animation: none;
 }
 
