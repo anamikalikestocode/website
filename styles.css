@@ -505,6 +505,22 @@ body {
     color: var(--text-light);
 }
 
+.me-tldr {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #2D2D2D;
+    line-height: 1.8;
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* === Empty State === */
 .empty-state {
     color: var(--text-light);
