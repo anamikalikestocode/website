@@ -1,10 +1,10 @@
-:root { --bg: #fff; --ink: #000; --accent: #ff3b30; --mute: #888; }
+:root { --bg: #fff; --ink: #000; --accent: #000; --mute: #888; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: var(--bg); color: var(--ink); }
 body { font-family: Arial, Helvetica, sans-serif; padding: clamp(24px, 6vh, 72px) clamp(16px, 5vw, 64px); }
 main, article { max-width: 640px; }
 a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--mute); }
 .name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 28px; }
 .name span { color: var(--accent); }
 .name a { text-decoration: none; }
@@ -23,7 +23,7 @@ body.home { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction
 .dot { display: inline-block; width: 0.42em; height: 0.42em; margin-left: 0.3em; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-in-out infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.8); } }
 .jazz { font: inherit; font-size: 15px; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
-.jazz:hover { color: var(--accent); }
+.jazz:hover { color: var(--mute); }
 .jazz .note { display: inline-block; color: var(--accent); margin-right: 4px; }
 .playing .jazz .note { animation: bob 0.6s ease-in-out infinite alternate; }
 .playing .dot { animation-duration: 0.6s; }
@@ -34,7 +34,7 @@ body.home { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction
 .pre .hello { display: block; font: inherit; font-size: clamp(19px, 2.3vw, 24px); line-height: 1.4; letter-spacing: -0.01em; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .hello span { color: var(--accent); }
 .hello small { display: block; margin-top: 6px; font-size: 15px; color: var(--mute); }
-.pre .hello:hover small { color: var(--accent); }
+.pre .hello:hover small { color: var(--ink); }
 .pre main { display: none; }
 main.in { animation: fadein 0.9s ease both; }
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
